@@ -3,6 +3,8 @@
 ## 📌 Overview
 Proyek ini merupakan Tugas Akhir dengan judul **“Penerapan Algoritma Random Forest untuk Prediksi Kualitas Air Kolam Bioflok dalam Budidaya Lele”**.  
 Sistem ini menggabungkan **IoT sensor, Machine Learning, dan Web Application** untuk memprediksi kualitas air kolam bioflok **6 menit ke depan** secara real-time.
+<img width="607" height="375" alt="image" src="https://github.com/user-attachments/assets/ddf65201-50d3-42be-abe1-fdccf40a5a11" />
+
 
 ## 🎯 Objectives
 - Memantau parameter kualitas air (suhu, pH, kekeruhan) secara otomatis.
