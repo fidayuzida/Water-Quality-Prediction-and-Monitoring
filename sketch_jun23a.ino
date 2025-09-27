@@ -218,13 +218,13 @@ void loop() {
         break;
 
       default:
-        shouldDisplayLCD = false;            // ✅ Matikan tampilan LCD rotasi
-        lcd.print("Monitoring...");          // ✅ Tampilkan kembali Monitoring
+        shouldDisplayLCD = false;            
+        lcd.print("Monitoring...");         
         break;
     }
 
-    lcdDisplayState++; // ✅ Dijalankan setelah switch selesai
-  }
+    lcdDisplayState++; 
+  
 }
 
 
