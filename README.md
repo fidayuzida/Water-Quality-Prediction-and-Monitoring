@@ -1,52 +1,44 @@
-# 🌊 Bioflok Water Quality Prediction
+# IoT–ML System for Catfish Pond Water Quality Prediction 🐟💧
 
-## 📌 Overview
-Proyek ini merupakan Tugas Akhir dengan judul **“Penerapan Algoritma Random Forest untuk Prediksi Kualitas Air Kolam Bioflok dalam Budidaya Lele”**.  
-Sistem ini menggabungkan **IoT sensor, Machine Learning, dan Web Application** untuk memprediksi kualitas air kolam bioflok **6 menit ke depan** secara real-time.
-
-<img width="607" height="375" alt="image" src="https://github.com/user-attachments/assets/ddf65201-50d3-42be-abe1-fdccf40a5a11" />
-
-
-## 🎯 Objectives
-- Memantau parameter kualitas air (suhu, pH, kekeruhan) secara otomatis.
-- Mengklasifikasikan kondisi air ke dalam 4 kategori: `Baik`, `Agak Baik`, `Agak Buruk`, `Buruk`.
-- Menyediakan dashboard web interaktif dengan log historis, grafik, filter tanggal, dan ekspor CSV.
-
-## ⚙️ System Architecture
-### 1. IoT & Hardware
-- **ESP32** sebagai mikrokontroler.
-- Sensor: **DS18B20 (suhu)**, **pH-4502C**, **SEN0189 (kekeruhan)**.
-- Data dikirim setiap 3 menit ke **Firebase Realtime Database**.
-
-### 2. Machine Learning
-- Algoritma: **Random Forest Classifier**.
-- Preprocessing: standarisasi, resampling, interpolasi missing value.
-- Feature engineering: lag features, rolling mean/std.
-- Handling imbalance: **SMOTE**.
-- Hyperparameter tuning: **Randomized Search**.
-- **Hasil:** Akurasi 98.05%, rata-rata F1-score 0.9478.
-
-### 3. Web Application
-- **Backend**: Flask API (Python, scikit-learn) + Node.js (Express) untuk komunikasi data.
-- **Frontend**: HTML + Bootstrap (Firebase Hosting).
-- **Deployment**: Azure VM + Ngrok tunneling.
-- Fitur: dashboard real-time, log historis, filter tanggal, ekspor CSV.
+This project integrates IoT sensors, a custom PCB, and Machine Learning (Random Forest) to monitor and predict water quality in catfish ponds (biofloc system) in real time.
 
 ## 🚀 Features
-- 📡 Real-time monitoring suhu, pH, kekeruhan.
-- 🤖 Prediksi kualitas air 6 menit ke depan.
-- 📊 Visualisasi grafik interaktif & tabel log.
-- ⏱️ Filter data berdasarkan rentang tanggal.
-- 📂 Ekspor data ke CSV.
-- ☁️ Full-stack integrasi IoT + ML + Web.
+- **Hardware**: ESP32 microcontroller, sensors (DS18B20 for temperature, pH-4502C for pH, SEN0189 for turbidity), I2C LCD.
+- **PCB Design**: Custom schematic & PCB designed with EasyEDA, integrating all sensors and ESP32.
+- **Firmware**: Arduino IDE with WiFi + Firebase RTDB + OTA update support.
+- **Cloud & Database**: Data transmission to Firebase Realtime Database (RTDB).
+- **Machine Learning**: Random Forest model trained on water-quality dataset (98.05% accuracy, F1-score 0.94).
+- **Web Dashboard**: Flask backend + HTML/Bootstrap frontend hosted on Firebase, showing real-time graphs, logs, and predictions.
 
-## 🛠️ Tech Stack
-- **IoT**: ESP32, Arduino IDE
-- **Machine Learning**: Python, scikit-learn, Pandas, SMOTE
-- **Web**: Flask, Node.js, Express, Bootstrap, Firebase Hosting
-- **Cloud**: Firebase Realtime Database, Azure VM, Ngrok
-- **Hardware**: Sensor pH-4502C, DS18B20, SEN0189
+## 🛠 System Architecture
+<img width="645" height="353" alt="image" src="https://github.com/user-attachments/assets/d3db7d6e-370f-4da6-8ac0-299eb56b7cba" />
 
-## 🔗 Links
-- 🌐 Website Monitoring: http://rf-bioflok.web.app/
+
+## 🔌 Hardware
+- Schematic design in EasyEDA  
+- Custom PCB (10x9 cm, single-layer)  
+- Assembled with ESP32, sensors, and LCD  
+
+<img width="684" height="457" alt="image" src="https://github.com/user-attachments/assets/09818148-410d-4aa8-bd9f-67fd120b3ea3" />
+<img width="390" height="352" alt="image" src="https://github.com/user-attachments/assets/73bc5822-e9fb-4f1e-aee4-c28659665cb4" />
+<img width="607" height="375" alt="image" src="https://github.com/user-attachments/assets/e30445fd-38dc-4eed-a2b6-244b75d3c394" />
+
+
+## 📡 Data Pipeline
+- Sensors → ESP32 → Firebase RTDB (every 3 minutes)  
+- Firebase → ML Model (Random Forest, time-series based)  
+- Prediction results stored & visualized on dashboard  
+
+## 🤖 Machine Learning
+- Preprocessing: resampling (5s → 3m), interpolation, labeling, SMOTE balancing  
+- Model: Random Forest (hyperparameter tuned with Randomized Search)  
+- Evaluation: Accuracy 98.05%, F1-score 0.9478  
+
+<img width="632" height="474" alt="image" src="https://github.com/user-attachments/assets/80eebbce-05d3-4465-9a88-fbdbdac46991" />
+
+## 🌐 Web Dashboard
+- Dashboard view with real-time water quality & predictions  
+- Log table with filter + CSV export  
+Link: https://rf-bioflok.web.app/
+
 
