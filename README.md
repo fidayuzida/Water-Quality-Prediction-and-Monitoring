@@ -11,7 +11,7 @@ This project integrates IoT sensors, a custom PCB, and Machine Learning (Random 
 - **Web Dashboard**: Flask backend + HTML/Bootstrap frontend hosted on Firebase, showing real-time graphs, logs, and predictions.
 
 ## 🛠 System Architecture
-<img width="645" height="353" alt="image" src="https://github.com/user-attachments/assets/d3db7d6e-370f-4da6-8ac0-299eb56b7cba" />
+<img width="688" height="352" alt="image" src="https://github.com/user-attachments/assets/e46ee9a1-16e4-4079-b7e0-26e3c075daa1" />
 
 ## 📟 Firmware (ESP32)
 
