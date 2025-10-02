@@ -13,6 +13,16 @@ This project integrates IoT sensors, a custom PCB, and Machine Learning (Random 
 ## 🛠 System Architecture
 <img width="645" height="353" alt="image" src="https://github.com/user-attachments/assets/d3db7d6e-370f-4da6-8ac0-299eb56b7cba" />
 
+## 📟 Firmware (ESP32)
+
+Developed with Arduino IDE for ESP32. Main workflow:
+
+1. Initialize WiFi, Firebase, sensors (pH, temperature, turbidity), LCD, OTA.  
+2. Check WiFi connection → restart if failed.  
+3. Read sensors periodically.  
+4. Every 3 minutes → average sensor values.  
+5. Send data to Firebase RTDB.  
+6. Reset variables and repeat.  
 
 ## 🔌 Hardware
 - Schematic design in EasyEDA  
